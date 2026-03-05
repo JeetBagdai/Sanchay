@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const ANALOGY_GROQ_KEY = process.env.GROQ_PERSONALIZATION_API_KEY;
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
+    const ANALOGY_GROQ_KEY = process.env.GROQ_PERSONALIZATION_API_KEY;
+
     try {
         const { topic } = await req.json();
 

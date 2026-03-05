@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const ANALOGY_GROQ_KEY = process.env.GROQ_PERSONALIZATION_API_KEY;
+export const dynamic = "force-dynamic";
 
 const LANG_NAMES: Record<string, string> = {
     as: "Assamese", bn: "Bengali", brx: "Bodo", doi: "Dogri",
@@ -11,6 +11,8 @@ const LANG_NAMES: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
+    const ANALOGY_GROQ_KEY = process.env.GROQ_PERSONALIZATION_API_KEY;
+
     let topic = "", cardType = "", title = "", content = "", targetLang = "en";
     try {
         const body = await req.json();
