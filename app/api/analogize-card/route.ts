@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const ANALOGY_GROQ_KEY = process.env.GROQ_API_KEY;
+const ANALOGY_GROQ_KEY = process.env.GROQ_PERSONALIZATION_API_KEY;
 
 const LANG_NAMES: Record<string, string> = {
     as: "Assamese", bn: "Bengali", brx: "Bodo", doi: "Dogri",
