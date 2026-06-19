@@ -53,7 +53,7 @@ function QuickEstimator() {
             <span className="text-sm font-bold text-amber-400">₹{contrib.toLocaleString("en-IN")}</span>
           </div>
           <input type="range" min={500} max={50000} step={500} value={contrib}
-            onChange={e => setAge(+e.target.value)} // Wait, fixed typo here too: setAge -> setContrib
+            onChange={e => setContrib(+e.target.value)}
             className="w-full accent-amber-400"
           />
         </div>
@@ -98,6 +98,16 @@ export default function LandingPage() {
     setHasUser(!!getUser());
   }, []);
 
+  const title = t("landing.hero.title");
+  let firstPart = "";
+  let secondPart = title;
+
+  const match = title.match(/([\s\S]*?)(retire|retirement|অবসর|অৱসৰ|ଅବସರ|बिसोबार|रिटायर|ਰਿਟਾਇਰ|ریٹائر|رٽائر|નિવૃત્તિ|ನಿವೃತ್ತಿ|निवृत्ती|निवृत्त्|निवृत्ति|सेवानिवृत्तिक|सेवानिवृत्ति|വിരമിക്കൽ|তৌবগীদা|अवकाश|ஓய்வு|విరమణ)([\s\S]*)/i);
+  if (match) {
+    firstPart = match[1];
+    secondPart = match[2] + match[3];
+  }
+
   return (
     <div className="hero-gradient min-h-screen">
       {/* Navbar */}
@@ -130,8 +140,14 @@ export default function LandingPage() {
                 🇮🇳 {t("landing.platform")}
               </div>
               <h1 className="text-4xl lg:text-5xl font-black text-foreground leading-tight mb-4">
-                {t("landing.hero.title").split("retire")[0]}<br />
-                <span className="gradient-text">{t("landing.hero.title").includes("retire") ? t("landing.hero.title").split("?")[0].replace(t("landing.hero.title").split("retire")[0], "") + "?" : t("landing.hero.title")}</span>
+                {firstPart ? (
+                  <>
+                    {firstPart}<br />
+                    <span className="gradient-text">{secondPart}</span>
+                  </>
+                ) : (
+                  <span className="gradient-text">{secondPart}</span>
+                )}
               </h1>
               <p className="text-muted text-base leading-relaxed mb-8 lg:max-w-lg">
                 {t("landing.hero.subtitle")}

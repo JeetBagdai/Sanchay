@@ -68,8 +68,7 @@ export default function SettingsPage() {
         ["Platform", "NPS Literacy & Behavioral Finance"],
         ["Data", "Local (Browser only)"],
         ["AI", "Education only · No advice"],
-        ["Source", "PFRDA Guidelines 23-24"],
-        ["loading..."]
+        ["Source", "PFRDA Guidelines 23-24"]
     ];
     const [tx, setTx] = useState<string[]>(staticInfo.flat());
     const txLangRef = useRef("");
