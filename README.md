@@ -1,5 +1,7 @@
 # सanchay – Gamified Pension Readiness & Cognitive Personalization Engine
 
+🚀 **Live Demo**: [https://sanchay-pension.netlify.app](https://sanchay-pension.netlify.app)
+
 Sanchay is an advanced, gamified behavioral finance and literacy platform engineered to accelerate retirement readiness and National Pension System (NPS) awareness among India's young workforce. By integrating behavioral economics, adversarial AI debate coaching, time-forward simulation models, and contextual cognitive personalization, Sanchay shifts pension planning from passive math to active, consequential choice.
 
 ---
